@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run my custom action
-        uses: sundaypeople/sakura-apprun-deploy@v0
+        uses: sundaypeople/sakura-apprun-deploy@v0.0.1
         with:
           access_token: ${{ secrets.ACCESS_TOKEN }}
           access_secret: ${{ secrets.ACCESS_SECRET }}
