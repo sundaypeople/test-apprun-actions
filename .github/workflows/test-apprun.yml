@@ -1,6 +1,8 @@
 # .github/workflows/local-test.yml
 name: local-test
-on: { workflow_dispatch: {} }
+
+on:
+  workflow_dispatch: {}
 
 jobs:
   deploy:
@@ -13,7 +15,7 @@ jobs:
         uses: sundaypeople/sakura-apprun-deploy@v0.0.1
         with:
           # 認証（必須）
-          access_token:  ${{ secrets.APPRUN_ACCESS_TOKEN }}
+          access_token: ${{ secrets.APPRUN_ACCESS_TOKEN }}
           access_secret: ${{ secrets.APPRUN_ACCESS_SECRET }}
 
           # アプリ識別
@@ -46,7 +48,7 @@ jobs:
           # ヘッダは YAML マップで渡す
           probe_headers: |
             X-Env: "prod"
-            X-Token: aaaaaa
+            X-Token: "aaaaaa"
 
           # 環境変数（YAML マップ）
           env: |
@@ -54,4 +56,62 @@ jobs:
             LOG_LEVEL: "info"
 
       - name: Print URL
-        run: echo "Public URL: ${{ steps.deploy.outputs.public_url }}"
+        run: echo "Public URL# .github/workflows/local-test.yml
+name: local-test
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to Apprun
+        id: deploy
+        uses: sundaypeople/sakura-apprun-deploy@v0.0.1
+        with:
+          # 認証（必須）
+          access_token: ${{ secrets.APPRUN_ACCESS_TOKEN }}
+          access_secret: ${{ secrets.APPRUN_ACCESS_SECRET }}
+
+          # アプリ識別
+          application_name: example
+          image: testnginx.sakuracr.jp/busy_server:v0.0.2
+
+          # ポート / スケール
+          port: 8080
+          min_scale: 0
+          max_scale: 2
+
+          # コンポーネント名（省略時は application_name）
+          components_name: example
+
+          # レジストリ（プライベートの場合）
+          container_registry_username: ${{ secrets.REGISTRY_USER }}
+          container_registry_password: ${{ secrets.REGISTRY_PASS }}
+          server: testnginx.sakuracr.jp
+
+          # リソース上限
+          max_cpu: "0.5"      # 文字列: "0.1"〜"1"
+          max_memory: "512Mi" # 256Mi / 512Mi / 1Gi / 2Gi
+
+          # タイムアウト（秒）
+          timeout_seconds: 60
+
+          # HTTP ヘルスチェック
+          probe_path: /healthz
+          probe_port: 8080
+          # ヘッダは YAML マップで渡す
+          probe_headers: |
+            X-Env: "prod"
+            X-Token: "aaaaaa"
+
+          # 環境変数（YAML マップ）
+          env: |
+            NODE_ENV: "production"
+            LOG_LEVEL: "info"
+
+      - name: Print URL
+        run: echo "Public URL ${{ steps.deploy.outputs.public_url }}"
