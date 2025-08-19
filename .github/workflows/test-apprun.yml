@@ -13,8 +13,8 @@ jobs:
         id: deploy
         uses: sundaypeople/sakura-apprun-deploy@v0.0.1
         with:
-          access_token:  ${{ secrets.APPRUN_ACCESS_TOKEN }}
-          access_secret: ${{ secrets.APPRUN_ACCESS_SECRET }}
+          access_token:  ${{ secrets.ACCESS_TOKEN }}
+          access_secret: ${{ secrets.ACCESS_SECRET }}
           application_name: example
           image: testnginx.sakuracr.jp/busy_server:v0.0.2
           port: 8080
