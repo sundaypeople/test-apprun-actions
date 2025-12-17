@@ -23,7 +23,7 @@ jobs:
           components_name: example
           container_registry_username: ${{ secrets.REGISTRY_USER }}
           container_registry_password: ${{ secrets.REGISTRY_PASS }}
-          server: testnginx.sakuracr.jp
+          server: testinginx.sakuracr.jp
           max_cpu: "0.5"
           max_memory: "1Gi"
           timeout_seconds: 60
