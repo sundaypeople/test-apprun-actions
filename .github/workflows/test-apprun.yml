@@ -27,8 +27,8 @@ jobs:
           max_cpu: "0.5"
           max_memory: "1Gi"
           timeout_seconds: 60
-          probe_path: /healthz
-          probe_port: 8080
+          probe_path: /
+          probe_port: 80
           probe_headers: |
             X-Env: "prod"
             X-Token: "aaaaaa"
