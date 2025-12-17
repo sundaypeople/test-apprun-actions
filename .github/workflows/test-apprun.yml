@@ -11,12 +11,12 @@ jobs:
       - uses: actions/checkout@v4
       - name: Deploy to Apprun
         id: deploy
-        uses: testinginx.sakuracr.jp/testnginx:v0.0.1
+        uses: sundaypeople/sakura-apprun-deploy@v0.0.1
         with:
           access_token:  ${{ secrets.ACCESS_TOKEN }}
           access_secret: ${{ secrets.ACCESS_SECRET }}
           application_name: example
-          image: testnginx.sakuracr.jp/busy_server:v0.0.2
+          image: testinginx.sakuracr.jp/testnginx:v0.0.1
           port: 8080
           min_scale: 0
           max_scale: 2
