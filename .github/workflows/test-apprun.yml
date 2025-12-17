@@ -17,7 +17,7 @@ jobs:
           access_secret: ${{ secrets.ACCESS_SECRET }}
           application_name: example
           image: testinginx.sakuracr.jp/testnginx:v0.0.1
-          port: 8080
+          port: 80
           min_scale: 0
           max_scale: 2
           components_name: example
