@@ -48,7 +48,6 @@ jobs:
           # ヘッダは YAML マップで渡す
           probe_headers: |
             X-Env: "prod"
-            X-Token: "${{ secrets.PROBE_TOKEN }}"
 
           # 環境変数（YAML マップ）
           env: |
