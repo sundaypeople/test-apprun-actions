@@ -15,8 +15,8 @@ jobs:
         uses: sundaypeople/sakura-apprun-deploy@v0.0.4
         with:
           # 認証（必須）
-          access_token:  ${{ secrets.APPRUN_ACCESS_TOKEN }}
-          access_secret: ${{ secrets.APPRUN_ACCESS_SECRET }}
+          access_token:  ${{ secrets.ACCESS_TOKEN }}
+          access_secret: ${{ secrets.ACCESS_SECRET }}
 
           # アプリ識別
           application_name: example
