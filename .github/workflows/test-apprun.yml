@@ -54,11 +54,7 @@ jobs:
             NODE_ENV: "production"
             LOG_LEVEL: "info"
 
-          # packet filter
-          packet_filter_enabled: true
-          packet_filter_allowlist: |
-            0.0.0.0/0
-            1.1.1.1/32
+
 
       - name: Print URL
         run: echo "Public URL: ${{ steps.deploy.outputs.public_url }}"
