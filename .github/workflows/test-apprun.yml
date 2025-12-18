@@ -34,7 +34,6 @@ jobs:
           # レジストリ（プライベートの場合）
           container_registry_username: ${{ secrets.REGISTRY_USER }}
           container_registry_password: ${{ secrets.REGISTRY_PASS }}
-          server: testnginx.sakuracr.jp
 
           # リソース上限
           max_cpu: "0.5"     
