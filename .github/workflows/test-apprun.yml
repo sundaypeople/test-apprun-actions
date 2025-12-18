@@ -27,7 +27,7 @@ jobs:
           max_cpu: "0.5"
           max_memory: "1Gi"
           timeout_seconds: 60
-          probe_path: /aaa/ffff
+          probe_path: /aaa/fffff
           probe_port: 80
           probe_headers: |
             X-Env: "prod"
