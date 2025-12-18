@@ -37,7 +37,7 @@ jobs:
 
           # リソース上限
           max_cpu: "0.5"     
-          max_memory: "512Mi" 
+          max_memory: "1Gi" 
 
           # タイムアウト（秒）
           timeout_seconds: 60
