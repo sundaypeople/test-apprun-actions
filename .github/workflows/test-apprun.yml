@@ -60,3 +60,6 @@ jobs:
           packet_filter_allowlist: |
             0.0.0.0/0
             1.1.1.1/32
+
+      - name: Print URL
+        run: echo "Public URL: ${{ steps.deploy.outputs.public_url }}"
