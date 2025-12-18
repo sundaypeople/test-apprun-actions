@@ -41,3 +41,22 @@ jobs:
 
           # タイムアウト（秒）
           timeout_seconds: 60
+
+          # HTTP ヘルスチェック
+          probe_path: /healthz
+          probe_port: 8080
+          # ヘッダは YAML マップで渡す
+          probe_headers: |
+            X-Env: "prod"
+            X-Token: "${{ secrets.PROBE_TOKEN }}"
+
+          # 環境変数（YAML マップ）
+          env: |
+            NODE_ENV: "production"
+            LOG_LEVEL: "info"
+
+          # packet filter
+          packet_filter_enabled: true
+          packet_filter_allowlist: |
+            0.0.0.0/0
+            1.1.1.1/32
