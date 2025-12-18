@@ -53,8 +53,3 @@ jobs:
           env: |
             NODE_ENV: "production"
             LOG_LEVEL: "info"
-
-
-
-      - name: Print URL
-        run: echo "Public URL: ${{ steps.deploy.outputs.public_url }}"
