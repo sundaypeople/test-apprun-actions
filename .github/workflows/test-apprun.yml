@@ -21,7 +21,7 @@ jobs:
           # アプリ識別
           application_name: example
           image: testinginx.sakuracr.jp/testnginx:v0.0.2 # デプロイするコンテナイメージ
-          server: testnginx.sakuracr.jp
+          server: testinginx.sakuracr.jp
 
           # ポート / スケール
           port: 80
