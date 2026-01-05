@@ -43,7 +43,7 @@ jobs:
           timeout_seconds: 60
 
           # HTTP ヘルスチェック
-          probe_path: /healthz
+          probe_path: /
           probe_port: 80
           # ヘッダは YAML マップで渡す
           probe_headers: |
@@ -54,6 +54,7 @@ jobs:
           env: |
             NODE_ENV: "production"
             LOG_LEVEL: "info"
+            TEST: "ADD_TEST"
 
           inherit_env: "true"
 
