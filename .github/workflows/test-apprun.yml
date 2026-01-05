@@ -24,7 +24,7 @@ jobs:
           server: testnginx.sakuracr.jp
 
           # ポート / スケール
-          port: 8080
+          port: 80
           min_scale: 0
           max_scale: 2
 
@@ -44,7 +44,7 @@ jobs:
 
           # HTTP ヘルスチェック
           probe_path: /healthz
-          probe_port: 8080
+          probe_port: 80
           # ヘッダは YAML マップで渡す
           probe_headers: |
             X-Env: "prod"
