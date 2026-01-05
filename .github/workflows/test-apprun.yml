@@ -12,7 +12,7 @@ jobs:
 
       - name: Deploy to Apprun
         id: deploy
-        uses: sundaypeople/sakura-apprun-deploy@v0.0.4
+        uses: sundaypeople/sakura-apprun-deploy@v0.0.5
         with:
           # 認証（必須）
           access_token:  ${{ secrets.ACCESS_TOKEN }}
@@ -54,6 +54,9 @@ jobs:
           env: |
             NODE_ENV: "production"
             LOG_LEVEL: "info"
+
+          inherit_env: "true"
+
 
           # packet filter
           packet_filter_enabled: true
