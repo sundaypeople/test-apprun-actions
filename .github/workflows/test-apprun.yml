@@ -12,7 +12,7 @@ jobs:
 
       - name: Deploy to Apprun
         id: deploy
-        uses: sundaypeople/sakura-apprun-deploy@v0.0.5
+        uses: sundaypeople/sakura-apprun-deploy@main
         with:
           # 認証（必須）
           access_token:  ${{ secrets.ACCESS_TOKEN }}
@@ -22,6 +22,7 @@ jobs:
           application_name: example
           image: testinginx.sakuracr.jp/testnginx:v0.0.2 # デプロイするコンテナイメージ
           server: testinginx.sakuracr.jp
+          container_registry_action: 'keep'
 
           # ポート / スケール
           port: 80
