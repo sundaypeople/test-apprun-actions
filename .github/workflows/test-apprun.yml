@@ -12,7 +12,7 @@ jobs:
 
       - name: Deploy to Apprun
         id: deploy
-        uses: sundaypeople/sakura-apprun-deploy@main
+        uses: sundaypeople/sakura-apprun-deploy@0.0.7
         with:
           # 認証（必須）
           access_token:  ${{ secrets.ACCESS_TOKEN }}
