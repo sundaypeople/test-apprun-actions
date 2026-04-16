@@ -20,9 +20,9 @@ jobs:
 
           # アプリ識別
           application_name: example
-          image: testinginx.sakuracr.jp/testnginx:v0.0.2 # デプロイするコンテナイメージ
-          server: testinginx.sakuracr.jp
-          container_registry_action: 'new'
+          image: testinginx.sakuracr.jp/testnginx:v0.0.1 # デプロイするコンテナイメージ
+          # server: testinginx.sakuracr.jp
+          container_registry_action: 'keep'
 
           # ポート / スケール
           port: 80
@@ -33,11 +33,11 @@ jobs:
           components_name: example
 
           # レジストリ（プライベートの場合）
-          container_registry_username: ${{ secrets.REGISTRY_USER }}
-          container_registry_password: ${{ secrets.REGISTRY_PASS }}
+          # container_registry_username: ${{ secrets.REGISTRY_USER }}
+          # container_registry_password: ${{ secrets.REGISTRY_PASS }}
 
           # リソース上限
-          max_cpu: "0.5"     
+          max_cpu: "1"     
           max_memory: "1Gi" 
 
           # タイムアウト（秒）
