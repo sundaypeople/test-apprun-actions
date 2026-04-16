@@ -37,8 +37,8 @@ jobs:
           # container_registry_password: ${{ secrets.REGISTRY_PASS }}
 
           # リソース上限
-          max_cpu: "1"     
-          max_memory: "0.5Gi" 
+          max_cpu: "0.5"     
+          max_memory: "1Gi" 
 
           # タイムアウト（秒）
           timeout_seconds: 60
