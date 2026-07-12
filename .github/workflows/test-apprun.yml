@@ -28,7 +28,7 @@ jobs:
           # ポート / スケール
           port: 8080
           min_scale: 0
-          max_scale: 2
+          max_scale: 1
 
           # コンポーネント名（省略時は application_name）
           components_name: example
