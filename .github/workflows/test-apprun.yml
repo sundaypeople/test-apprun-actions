@@ -21,8 +21,8 @@ jobs:
           # アプリ識別
           application_name: example
           image: testinginx.sakuracr.jp/show-env:latest # デプロイするコンテナイメージ
-          # server: testinginx.sakuracr.jp
-          container_registry_action: 'keep'
+          server: testinginx.sakuracr.jp
+          container_registry_action: 'new'
 
           # ポート / スケール
           port: 8080
