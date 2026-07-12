@@ -19,7 +19,7 @@ jobs:
           access_secret: ${{ secrets.ACCESS_SECRET }}
 
           # アプリ識別
-          application_name: example
+          application_name: example3
           image: testinginx.sakuracr.jp/show-env:latest # デプロイするコンテナイメージ
           server: testinginx.sakuracr.jp
           container_registry_action: 'new'
