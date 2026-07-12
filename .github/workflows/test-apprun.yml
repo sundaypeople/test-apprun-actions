@@ -12,7 +12,7 @@ jobs:
 
       - name: Deploy to Apprun
         id: deploy
-        uses: sundaypeople/sakura-apprun-deploy@v0.0.7
+        uses: sundaypeople/sakura-apprun-deploy@main
         with:
           # 認証（必須）
           access_token:  ${{ secrets.ACCESS_TOKEN }}
@@ -20,12 +20,12 @@ jobs:
 
           # アプリ識別
           application_name: example
-          image: testinginx.sakuracr.jp/testnginx:v0.0.1 # デプロイするコンテナイメージ
+          image: testinginx.sakuracr.jp/show-env:latest # デプロイするコンテナイメージ
           # server: testinginx.sakuracr.jp
           container_registry_action: 'keep'
 
           # ポート / スケール
-          port: 80
+          port: 8080
           min_scale: 0
           max_scale: 2
 
@@ -45,7 +45,7 @@ jobs:
 
           # HTTP ヘルスチェック
           probe_path: /
-          probe_port: 80
+          probe_port: 8080
           # ヘッダは YAML マップで渡す
           probe_headers: |
             X-Env: "prod"
