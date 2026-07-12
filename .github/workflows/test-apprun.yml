@@ -58,7 +58,7 @@ jobs:
             LOG_LEVEL: "info"
             TEST: "test"
 
-          inherit_env: "true"
+          inherit_env: "false"
 
 
           # packet filter
